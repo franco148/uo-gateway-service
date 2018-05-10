@@ -1,9 +1,9 @@
 zuul:
   prefix: /api/v1
   routes:
-    uo-auth-service:
+    auth-service:
       path: /auth/**
-      servideId: UO-AUTH-SERVICE
+      servideId: AUTH-SERVICE
 
 eureka:
   client:
@@ -28,3 +28,8 @@ spring:
 #          thread:
 #            timeoutInMilliseconds: 60000
 
+#ribbon:
+#  eureka:
+#    enabled: true
+#    ReadTimeout: 20000
+#    ConnectTimeout: 20000
