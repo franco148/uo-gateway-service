@@ -4,6 +4,13 @@ zuul:
     auth-service:
       path: /auth/**
       servideId: AUTH-SERVICE
+  host:
+    connect-timeout-millis: 100000
+    socket-timeout-millis: 100000
+#    max-total-connections: 200
+#    max-per-route-connections: 20
+#    time-unit: milliseconds
+#    time-to-live: 10000
 
 eureka:
   client:

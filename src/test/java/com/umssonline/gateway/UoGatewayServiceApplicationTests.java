@@ -1,4 +1,4 @@
-package com.fral.uo.gateway.uogatewayservice;
+package com.umssonline.gateway;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
