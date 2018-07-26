@@ -3,7 +3,10 @@ zuul:
   routes:
     auth-service:
       path: /auth/**
-      servideId: AUTH-SERVICE
+      serviceId: AUTH-SERVICE
+    project-service:
+      path: /proj-mgt/**
+      serviceId: PROJECT-MGT-SERVICE
   host:
     connect-timeout-millis: 100000
     socket-timeout-millis: 100000

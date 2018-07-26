@@ -20,6 +20,7 @@ public class DocumentationProvider implements SwaggerResourcesProvider {
         List<SwaggerResource> resources = new ArrayList<>();
 
         resources.add(swaggerResource("AUTH-SERVICE", "/api/v1/auth/v2/api-docs", "1.0"));
+        resources.add(swaggerResource("PROJECT-MGT-SERVICE", "/api/v1/proj-mgt/v2/api-docs", "1.0"));
 
         return resources;
     }
