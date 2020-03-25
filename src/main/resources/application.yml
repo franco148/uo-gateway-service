@@ -32,6 +32,13 @@ spring:
   application:
     name: uo-gateway-service
 
+uo:
+  zuul:
+    security:
+      url-path: /api/v1/auth/login
+      registration-path: /api/v1/auth/users
+      h2-console-path: /api/v1/auth/h2-console/**
+
 # Increase the Hystrix timeout to 60s (for all)
 #hystrix:
 #  command:
