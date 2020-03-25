@@ -11,8 +11,8 @@ zuul:
       path: /social/**
       serviceId: SOCIAL-SERVICE
   host:
-    connect-timeout-millis: 100000
-    socket-timeout-millis: 100000
+    connect-timeout-millis: 100000000 #Added 3 more zeros
+    socket-timeout-millis: 100000000 #Added 3 more zeros
 #    max-total-connections: 200
 #    max-per-route-connections: 20
 #    time-unit: milliseconds
