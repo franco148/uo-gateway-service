@@ -38,6 +38,10 @@ uo:
       url-path: /api/v1/auth/login
       registration-path: /api/v1/auth/users
       h2-console-path: /api/v1/auth/h2-console/**
+      authorization:
+        header-name: Authorization
+        prefix: Bearer
+      token-secret: My.Jwt.Secret.Key.08d7a773-c1a2-4ecb-9c78-9799f4a4f45f
 
 # Increase the Hystrix timeout to 60s (for all)
 #hystrix:
