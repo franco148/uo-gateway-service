@@ -6,6 +6,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
+import org.springframework.util.Base64Utils;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
@@ -48,9 +49,10 @@ public class AuthorizationFilter extends BasicAuthenticationFilter {
             return null;
 
         String token = authorizationHeader.replace(environment.getProperty("uo.zuul.security.authorization.prefix"), "");
+        String tokenSecretBase64Bytes = Base64Utils.encodeToString(environment.getProperty("uo.zuul.security.token-secret").getBytes());
 
         String userId = Jwts.parser()
-                .setSigningKey(environment.getProperty("uo.zuul.security.token-secret"))
+                .setSigningKey(tokenSecretBase64Bytes.getBytes())
                 .parseClaimsJws(token)
                 .getBody()
                 .getSubject();
